@@ -1,0 +1,17 @@
+  version: '3'
+  services:
+    n8n:
+      image: custom-n8n
+      ports:
+        - "5678:5678"
+      environment:
+        - N8N_BASIC_AUTH_ACTIVE=true
+        - N8N_BASIC_AUTH_USER=admin
+        - N8N_BASIC_AUTH_PASSWORD=yourpassword
+      volumes:
+        - ~/.n8n:/home/node/.n8n
+        - ~/Documents/perf-test-phase4.2/n8n/script_60s_50usr5rup:/home/node/script_60s_50usr5rup
+        - ~/Documents/perf-test-phase4.2/n8n/result_60s_50usr5rup:/home/node/result_60s_50usr5rup
+        - /Users/a677231/workspace/better-life-scripts-and-knowledge/ibank-uat:/home/node/scripts/ibank-uat
+        - /Users/a677231/workspace/better-life-scripts-and-knowledge/ibank-sit:/home/node/scripts/ibank-sit
+        - /Users/a677231/workspace/better-life-scripts-and-knowledge/ibank-stg:/home/node/scripts/ibank-stg
